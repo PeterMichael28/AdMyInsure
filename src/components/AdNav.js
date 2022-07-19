@@ -8,7 +8,7 @@ const AdNav = ({text, icon}) => {
         <img className="sidebar-logo" src={Logo} alt="logo" />
         <nav className='sidebar-nav d-flex flex-column'>
 
-          <Link to='/dashboard'>
+          <Link to='/AdMyInsure/dashboard'>
 
             <div className="side-bar-items ">
                 <i className="ri-bar-chart-fill"></i>
@@ -16,28 +16,28 @@ const AdNav = ({text, icon}) => {
             </div>
           </Link>
 
-          <Link to='/customers'>
+          <Link to='/AdMyInsure/customers'>
             <div className="side-bar-items ">
                 <i className="ri-group-line"></i>
               <p>Customers</p>
            </div>
           </Link>
 
-          <Link to='/claims'>
+          <Link to='/AdMyInsure/claims'>
             <div className="side-bar-items">
                 <i className="ri-edit-line"></i>
               <p>Claims</p>
            </div>
           </Link>
 
-          <Link to='/payments'>
+          <Link to='/AdMyInsure/payments'>
             <div className="side-bar-items">
                 <i className="ri-bank-card-line"></i>
               <p>Payments</p>
             </div>
           </Link>
 
-          <Link to='/dashboard'>
+          <Link to='/AdMyInsure/dashboard'>
             <div className="side-bar-items">
                 <i className={icon}></i>
               <p>{text}</p>
@@ -45,7 +45,7 @@ const AdNav = ({text, icon}) => {
           </Link>
             {/* <hr /> */}
 
-            <Link to='/' className="side-bar-items logout-dashboard">
+            <Link to='/AdMyInsure' className="side-bar-items logout-dashboard">
             <div className='d-flex' >
                 <i className="ri-logout-box-line me-2"></i>
                 <p>Logout</p>

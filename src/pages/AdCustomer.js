@@ -52,7 +52,7 @@ const AdCustomer = ({ data }) => {
                 const daaat = new Date(dat.timeStamp.toDate()).toDateString();
                 return (
                 // <Link to={`/profile/${dat.id}`}>
-                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three={daaat}  key={dat.id} to={`/profile/${dat.id}`} />
+                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three={daaat}  key={dat.id} to={`/AdMyInsure/profile/${dat.id}`} />
                 // </Link>
                 // <tr key={dat.id}>
                 //     <td>{dat.id}</td>

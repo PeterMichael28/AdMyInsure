@@ -85,7 +85,7 @@ const AdHome = () => {
                             </span>
                         </div>
                     </div>
-                    <Link to='/dashboard' className='btn gen-btn'>LOG IN</Link>
+                    <Link to='/AdMyInsure/dashboard' className='btn gen-btn'>LOG IN</Link>
             </form>
         </div>
     </div>

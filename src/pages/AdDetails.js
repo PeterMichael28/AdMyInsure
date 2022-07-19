@@ -36,8 +36,8 @@ const AdDetails = () => {
            <div className="top-det d-flex justify-content-between">
            <img src={Logo} alt="logo" />
             <div className="d-flex flex-column">
-                <Link to='/customers' className="mb-2">Back to Customers</Link>
-                <Link to='/dashboard'>Back to Dashboard</Link>
+                <Link to='/AdMyInsure/customers' className="mb-2">Back to Customers</Link>
+                <Link to='/AdMyInsure/dashboard'>Back to Dashboard</Link>
             </div>
            </div>
            <div className="bot-det">

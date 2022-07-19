@@ -15,7 +15,7 @@ const AdDash = () => {
             <p>Hello, <span>Lorem</span></p>
             <div className="dashboard-boxes d-flex justify-content-center align-content-center">
 
-                <Link to='/'>
+                <Link to='/AdMyInsure'>
 
                 <div className="main-section-item mb-4">
                     <p>analytics</p>
@@ -23,7 +23,7 @@ const AdDash = () => {
                 </div>
                 </Link>
 
-                <Link to='/customers'>
+                <Link to='/AdMyInsure/customers'>
 
                 <div className="main-section-item">
                     <p>customers</p>
@@ -31,7 +31,7 @@ const AdDash = () => {
                 </div>
                 </Link>
 
-                <Link to='/claims'>
+                <Link to='/AdMyInsure/claims'>
 
                 <div className="main-section-item">
                     <p>claims</p>
@@ -39,7 +39,7 @@ const AdDash = () => {
                 </div>
                 </Link>
 
-                <Link to='/payments'>
+                <Link to='/AdMyInsure/payments'>
                 <div className="main-section-item">
                     <p>Payments</p>
                     <img  className="dashboard-images" src={Logo2} alt="icon"/>
