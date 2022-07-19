@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+form {
+    width: 100%;
+}
+label {
+    cursor: pointer;
+} 
+.errors {
+    color: crimson;
+    font-size: .9rem;
+}
+.gen-btn {
+    width: 100%;
+    border-radius: 15px;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    background-color: #097AE0;
+    color: white;
+}
+/*inputs border color*/
+.form-control {
+    border: 1px solid rgb(14, 148, 209);
+    box-shadow: .5px .5px 1px rgb(14, 148, 209),
+                -.5px -.5px 1px rgb(14, 148, 209);
+    outline: none;
+    height: 40px;
+    padding-left: 20px;
+}
+.form-control input {
+    padding-left: 14px;
+}
+::placeholder {
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+/*Label*/
+label {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+/*password container*/
+.pass-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.pass-con input {
+    width: 89%;
+    border: none;
+    outline: none;
+}
+.pass-con span {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+/* .cus_id2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+} */
