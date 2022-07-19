@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AdMyInsure/static/css/main.fd186b22.css",
-    "main.js": "/AdMyInsure/static/js/main.8c9d806a.js",
+    "main.js": "/AdMyInsure/static/js/main.6a70049d.js",
     "static/media/icon3.jpg": "/AdMyInsure/static/media/icon3.d245b29fdbe8e070cf95.jpg",
     "static/media/icon1.jpg": "/AdMyInsure/static/media/icon1.dadb80d389bd2a5e197d.jpg",
     "static/media/icon2.jpg": "/AdMyInsure/static/media/icon2.d013cd643e3123c4fcb1.jpg",
@@ -10,10 +10,10 @@
     "static/media/myinsure-logo.png": "/AdMyInsure/static/media/myinsure-logo.3a0c821c29e17ec941a1.png",
     "index.html": "/AdMyInsure/index.html",
     "main.fd186b22.css.map": "/AdMyInsure/static/css/main.fd186b22.css.map",
-    "main.8c9d806a.js.map": "/AdMyInsure/static/js/main.8c9d806a.js.map"
+    "main.6a70049d.js.map": "/AdMyInsure/static/js/main.6a70049d.js.map"
   },
   "entrypoints": [
     "static/css/main.fd186b22.css",
-    "static/js/main.8c9d806a.js"
+    "static/js/main.6a70049d.js"
   ]
 }
