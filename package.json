@@ -1,6 +1,6 @@
 {
-  "name": "myInsure-admin",
-  "homepage": "http://PeterMichael28.github.io/myInsure-admin",
+  "name": "AdMyInsure",
+  "homepage": "http://PeterMichael28.github.io/AdMyInsure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -46,12 +46,12 @@ function App() {
     <div className="">
       <Router>
       <Routes>
-        <Route path='/' element={<AdHome />}></Route>
-        <Route path='/dashboard' element={<AdDash />}></Route>
-        <Route path='/claims' element={<AdClaim data={data} />}></Route>
-        <Route path='/payments' element={<AdPayments />}></Route>
-        <Route path='/customers' element={<AdCustomer data={data} />}></Route>
-        <Route path='/profile/:id' element={<AdDetails data={data} />}></Route>
+        <Route path='/AdMyInsure' element={<AdHome />}></Route>
+        <Route path='/AdMyInsure/dashboard' element={<AdDash />}></Route>
+        <Route path='/AdMyInsure/claims' element={<AdClaim data={data} />}></Route>
+        <Route path='/AdMyInsure/payments' element={<AdPayments />}></Route>
+        <Route path='/AdMyInsure/customers' element={<AdCustomer data={data} />}></Route>
+        <Route path='/AdMyInsure/profile/:id' element={<AdDetails data={data} />}></Route>
         {/* <Route path='/profile' element={<AdDetails />}></Route> */}
       </Routes>
       </Router>
