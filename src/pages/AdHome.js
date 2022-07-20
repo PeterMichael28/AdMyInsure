@@ -4,25 +4,27 @@ import Logo2 from '../imgs/ad2.png'
 import Logo3 from '../imgs/ad3.png'
 import { useState } from 'react';
 import Inputs from '../components/Inputs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUserAuth } from '../Context/UserAuth';
 
 const AdHome = () => {
     const [passDis, setPassDis] = useState(true);
-
+    const navigate = useNavigate();
     const [loginerr, setloginErr] = useState('')
+    const { loginIn } = useUserAuth()
   
     const [login, setLogin] = useState({
       loginEmail: '',
       loginPass: ''
     })
   
-    let handleLogin = (e) => {
+    let handleChange = (e) => {
       setLogin({
         ...login,
         [e.target.name]: e.target.value
       })
     }
-  const loginValues = { ...login}
+//   const loginValues = { ...login}
   
    
   
@@ -34,8 +36,6 @@ const AdHome = () => {
     //   } catch (error) {
     //     setloginErr(error.message)
     //     navigate('/login')
-  
-  
     //   }
     // }
   
@@ -46,6 +46,18 @@ const AdHome = () => {
     // const handleClick = () => {
     //     navigate('/getting-started')
     // }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(login)
+        try {
+            await loginIn(login.loginEmail, login.loginPass) 
+            navigate('/AdMyInsure/dashboard')
+          } catch (error) {
+            setloginErr(error.message)
+            navigate('/AdMyInsure')
+          }
+    }
 
 
     return ( 
@@ -62,11 +74,16 @@ const AdHome = () => {
         <div className="second-half">
             <img className="waving-hand" src={Logo3} alt="waving hand" />
             <p className="welcome-back">Welcome back!</p>
-            <form>
+            <form onSubmit={handleSubmit}>
+                <h5 className='errors'>{loginerr}</h5>
                     <Inputs 
-                        labelFor = 'USER ID'
-                        label = 'USER ID'
-                        type = 'text'
+                        labelFor = 'USER Email'
+                        label = 'USER Email'
+                        type = 'email'
+                        value={login.loginEmail}
+                        onChange={handleChange}
+                        name= 'loginEmail'
+                        placeholder='Your email'
                     />
                     <div className="mb-3">
                         <label htmlFor="Password" className="form-label m-0 mb-2">USER KEY</label>
@@ -76,8 +93,8 @@ const AdHome = () => {
                                 id="Password" 
                                 placeholder='Password' 
                                 required
-                                value={loginValues.loginPass}
-                                onChange={handleLogin}
+                                value={login.loginPass}
+                                onChange={handleChange}
                                 name= 'loginPass'
                                 />
                             <span className="input-group-text eye-span p-1 px-2" id="togglePassword">
@@ -85,7 +102,7 @@ const AdHome = () => {
                             </span>
                         </div>
                     </div>
-                    <Link to='/AdMyInsure/dashboard' className='btn gen-btn'>LOG IN</Link>
+                    <button className='btn gen-btn'>LOG IN</button>
             </form>
         </div>
     </div>

@@ -108,6 +108,9 @@ const AdDetails = () => {
                             <h3>876888768787</h3> 
                         </div>
                         <div className='w-100'>
+                        <div className="input-div">
+                            <input type="file" required accept='image/*' id='damImg' name='damImg' />
+                        </div>
                             <button className='btn gen-btn'>Upload Certificate</button>
                         </div>
                     </div>

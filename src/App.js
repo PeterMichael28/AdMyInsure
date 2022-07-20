@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AdClaim from './pages/AdClaim'
 import AdDash from './pages/AdDash'
@@ -10,10 +10,12 @@ import AdDetails from './pages/AdDetails'
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from './firebase-config'
+import { useUserAuth } from './Context/UserAuth';
 
 function App() {
 
 
+  const { user } = useUserAuth()
   const [data, setData] = useState([]);
   const [id, setId] = useState();
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,6 +44,13 @@ function App() {
         fetchData()
     }, [])
 
+   
+ 
+    const currentUser = user;
+  const RequireAuth = ({children}) => {
+    return currentUser ? children : <Navigate to='/AdMyInsure'/>
+  }
+
     // for pagination
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -56,11 +65,11 @@ function App() {
       <Router>
       <Routes>
         <Route path='/AdMyInsure' element={<AdHome />}></Route>
-        <Route path='/AdMyInsure/dashboard' element={<AdDash />}></Route>
-        <Route path='/AdMyInsure/claims' element={<AdClaim data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate}  />}></Route>
-        <Route path='/AdMyInsure/payments' element={<AdPayments data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate}  />}></Route>
-        <Route path='/AdMyInsure/customers' element={<AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} />}></Route>
-        <Route path='/AdMyInsure/profile/:id' element={<AdDetails data={data} />}></Route>
+        <Route path='/AdMyInsure/dashboard' element={<RequireAuth><AdDash /></RequireAuth>}></Route>
+        <Route path='/AdMyInsure/claims' element={<RequireAuth><AdClaim data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
+        <Route path='/AdMyInsure/payments' element={<RequireAuth><AdPayments data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
+        <Route path='/AdMyInsure/customers' element={<RequireAuth><AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
+        <Route path='/AdMyInsure/profile/:id' element={<RequireAuth><AdDetails data={data} /></RequireAuth>}></Route>
         {/* <Route path='/profile' element={<AdDetails />}></Route> */}
       </Routes>
       </Router>

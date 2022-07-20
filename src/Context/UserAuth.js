@@ -2,14 +2,14 @@ import { useContext, useState } from "react";
 import { createContext } from "react";
 import {
     // createUserWithEmailAndPassword,
-    // signInWithEmailAndPassword,
+    signInWithEmailAndPassword,
     // signOut,
     onAuthStateChanged,
     // GoogleAuthProvider,
     // signInWithPopup,
     // sendPasswordResetEmail,
 } from "firebase/auth"
-import { auth } from "../firebase-config";
+import { auth2 } from "../firebase-config2";
 import { useEffect } from "react";
 
 
@@ -22,9 +22,9 @@ export function UserAuthProvider({ children }) {
         //     return createUserWithEmailAndPassword( auth, email, password )
         // }
 
-        // function loginIn(email, password) {
-        //     return signInWithEmailAndPassword( auth, email, password )
-        // }
+        function loginIn(email, password) {
+            return signInWithEmailAndPassword( auth2, email, password )
+        }
 
         // function logOut() {
         //     return signOut(auth);
@@ -72,7 +72,7 @@ export function UserAuthProvider({ children }) {
 
         
         useEffect (() => {
-          const unsubscribed =  onAuthStateChanged( auth, (currentUser) => {
+          const unsubscribed =  onAuthStateChanged( auth2, (currentUser) => {
               setUser(currentUser)
               localStorage.setItem('user', JSON.stringify(user))
             });
@@ -83,7 +83,7 @@ export function UserAuthProvider({ children }) {
         }, [user])
 
 
-       return <UserAuth.Provider>
+       return <UserAuth.Provider value={{user, loginIn}}>
             {children}
         </UserAuth.Provider>
 }

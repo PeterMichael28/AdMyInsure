@@ -75,3 +75,8 @@ label {
     text-overflow: ellipsis;
     width: 100px;
 } */
+.input-div {
+    background: white;
+    border-radius: 30px;
+    padding: 0;
+}

@@ -12,7 +12,7 @@ const AdDash = () => {
         <div className=''>
             <AdNav />
         <div className="main-section p-5 pt-3">
-            <p>Hello, <span>Lorem</span></p>
+            <p>Hello, <span>Admin</span></p>
             <div className="dashboard-boxes d-flex justify-content-center align-content-center">
 
                 <Link to='/AdMyInsure'>
