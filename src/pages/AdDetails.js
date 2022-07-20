@@ -26,7 +26,7 @@ const AdDetails = () => {
                 console.log("No such document!");
                 setData(undefined)
               }
-            console.log(docSnap)
+            // console.log(docSnap)
         }
         fetchData()
     }, [id])
@@ -89,29 +89,26 @@ const AdDetails = () => {
                 </div>
                 <div className="claim">
                     <h5 className="text-center mb-4">Claims</h5>
-                    <div className="claims_info d-flex flex-column align-items-center">
-                    <img  className="dashboard-images" src={Logo4} alt="icon"/>
-                        <button className='btn gen-btn'>View Claims</button>
+                    <div className="claims_info d-flex flex-column align-items-center justify-content-between h-75">
+                        <div className='w-100'>
+                            <span>Subscription</span>
+                            <h3>enitan@gmail.com</h3> 
+                        </div>
+                        <div className='w-100'>
+                            <button className='btn gen-btn mb-2'>Accept Claim</button>
+                            <button className='btn gen-btn'>Deny Claim</button>
+                        </div>
                     </div>
                 </div>
                 <div className="pay">
                     <h5 className="text-center mb-4">Payments</h5>
-                    <div className="pay_info">
-                        <div>
-                            <span>Subscription</span>
-                            <h3>enitan@gmail.com</h3> 
-                        </div>
+                    <div className="pay_info d-flex flex-column justify-content-between h-75">
                         <div>
                             <span>Amount</span>
                             <h3>876888768787</h3> 
                         </div>
-                        <div>
-                            <span>Lorem Ipsum</span>
-                            <h3>Lorem Ipsum</h3> 
-                        </div>
-                        <div>
-                            <span>Lorem Ipsum</span>
-                            <h3>Lorem Ipsum</h3> 
+                        <div className='w-100'>
+                            <button className='btn gen-btn'>Upload Certificate</button>
                         </div>
                     </div>
                 </div>

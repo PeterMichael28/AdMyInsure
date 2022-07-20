@@ -1,7 +1,10 @@
+import { Link} from "react-router-dom";
 import AdNav from "../components/AdNav";
+import InsuredLists from "../components/InsuredLists";
+import Pagination from "../components/Pagination";
 import '../css/AdClaim.css'
 
-const AdCustomer = () => {
+const AdPayments = ({ data, totalPost, postPerPage, paginate }) => {
     return ( 
         <div>
         <AdNav text='Dashboard' icon='ri-dashboard-line' />
@@ -13,109 +16,32 @@ const AdCustomer = () => {
                 <i className="ri-search-line"></i>
             <input type="search" placeholder="Search" />
             </div>
-            {/* <div  className="whole-tool-box">
-            <i className="ri-filter-line"></i>
-            <button className="filter">Filter</button>
-            </div> */}
             </div>
             </div>
-        <table className="">
-            <tr>
-            <th>Customer ID</th>
-            <th>Customer Name</th>
-            <th>Payments</th>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
-        <tr>
-            <td>1234577</td>
-            <td>John Doe</td>
-            <td>Lorem Ispum</td>
-        </tr>
+            <table className="table table-striped table-hover table-responsive">
+            <thead className="bg-primary">
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Payments</th>
+                </tr>
+            </thead>
+        <tbody>
+            {data && data.map(dat => {
+                const daaat = new Date(dat.timeStamp.toDate()).toDateString();
+                return (
+                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three='No payments yet' key={dat.id} to={`/AdMyInsure/profile/${dat.id}`} />
+                )
+            })}
+        </tbody>
+   
         </table>
-        <div className="pagination p-2">
-            <a href="#/">Previous page</a>
-            <a href="#/" className="active-2">1</a>
-            <a href="#/" >2</a>
-            <a href="#/">3</a>
-            <a href="#/">4</a>
-            <a href="#/">5</a>
-            <a href="#/">6</a>
-            <a href="#/">7</a>
-            <a href="#/">Next Page</a>
-        </div>
+        
+        <Pagination postPerPage={postPerPage} totalPost={totalPost} paginate={paginate}  />
     </div>
         </div>
 
      );
 }
  
-export default AdCustomer;
+export default AdPayments ;
