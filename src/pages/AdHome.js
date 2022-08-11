@@ -41,7 +41,7 @@ const AdHome = () => {
   
     const passToggle = () => {
         setPassDis(!passDis)
-        console.log('show')
+        // console.log('show')
     }
     // const handleClick = () => {
     //     navigate('/getting-started')
@@ -49,13 +49,13 @@ const AdHome = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(login)
+        // console.log(login)
         try {
             await loginIn(login.loginEmail, login.loginPass) 
-            navigate('/AdMyInsure/dashboard')
+            navigate('/dashboard')
           } catch (error) {
             setloginErr(error.message)
-            navigate('/AdMyInsure')
+            navigate('/')
           }
     }
 

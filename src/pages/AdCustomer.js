@@ -7,6 +7,7 @@ import '../css/AdClaim.css'
 
 const AdCustomer = ({ data, totalPost, postPerPage, paginate }) => {
 
+  
 
     return ( 
         <div>
@@ -34,7 +35,7 @@ const AdCustomer = ({ data, totalPost, postPerPage, paginate }) => {
             {data && data.map(dat => {
                 const daaat = new Date(dat.timeStamp.toDate()).toDateString();
                 return (
-                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three={daaat}  key={dat.id} to={`/AdMyInsure/profile/${dat.id}`} />
+                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three={daaat}  key={dat.id} to={`/profile/${dat.id}`} />
                 )
             })}
         </tbody>

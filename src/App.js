@@ -44,11 +44,13 @@ function App() {
         fetchData()
     }, [])
 
+    const sortedActivities = data.sort((a, b) => b.timeStamp.toDate() - a.timeStamp.toDate())
+    // console.log(sortedActivities)
    
  
     const currentUser = user;
   const RequireAuth = ({children}) => {
-    return currentUser ? children : <Navigate to='/AdMyInsure'/>
+    return currentUser ? children : <Navigate to='/'/>
   }
 
     // for pagination
@@ -64,12 +66,12 @@ function App() {
     <div className="">
       <Router>
       <Routes>
-        <Route path='/AdMyInsure' element={<AdHome />}></Route>
-        <Route path='/AdMyInsure/dashboard' element={<RequireAuth><AdDash /></RequireAuth>}></Route>
-        <Route path='/AdMyInsure/claims' element={<RequireAuth><AdClaim data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
-        <Route path='/AdMyInsure/payments' element={<RequireAuth><AdPayments data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
-        <Route path='/AdMyInsure/customers' element={<RequireAuth><AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
-        <Route path='/AdMyInsure/profile/:id' element={<RequireAuth><AdDetails data={data} /></RequireAuth>}></Route>
+        <Route path='/' element={<AdHome />}></Route>
+        <Route path='/dashboard' element={<RequireAuth><AdDash /></RequireAuth>}></Route>
+        <Route path='/claims' element={<RequireAuth><AdClaim data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
+        <Route path='/payments' element={<RequireAuth><AdPayments data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
+        <Route path='/customers' element={<AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} />}></Route>
+        <Route path='/profile/:id' element={<RequireAuth><AdDetails data={data} /></RequireAuth>}></Route>
         {/* <Route path='/profile' element={<AdDetails />}></Route> */}
       </Routes>
       </Router>
