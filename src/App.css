@@ -20,7 +20,8 @@ label {
     color: crimson;
     font-size: .9rem;
 }
-.gen-btn {
+.gen-btn,
+.success-btn {
     width: 100%;
     border-radius: 15px;
     padding: 8px 0;
@@ -30,6 +31,9 @@ label {
     letter-spacing: 1.1px;
     background-color: #097AE0;
     color: white;
+}
+.success-btn {
+    background-color: green;
 }
 /*inputs border color*/
 .form-control {

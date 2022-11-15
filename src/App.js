@@ -70,12 +70,21 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth><AdDash /></RequireAuth>}></Route>
         <Route path='/claims' element={<RequireAuth><AdClaim data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
         <Route path='/payments' element={<RequireAuth><AdPayments data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
-        <Route path='/customers' element={<AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} />}></Route>
+        <Route path='/customers' element={<RequireAuth><AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} /></RequireAuth>}></Route>
         <Route path='/profile/:id' element={<RequireAuth><AdDetails data={data} /></RequireAuth>}></Route>
-        {/* <Route path='/profile' element={<AdDetails />}></Route> */}
       </Routes>
       </Router>
       
+         {/* <Router>
+      <Routes>
+        <Route path='/' element={<AdHome />}></Route>
+        <Route path='/dashboard' element={<AdDash />}></Route>
+        <Route path='/claims' element={<AdClaim data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} />}></Route>
+        <Route path='/payments' element={<AdPayments data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} />}></Route>
+        <Route path='/customers' element={<AdCustomer data={currentPost} postPerPage={postPerPage} totalPost={totalPost} paginate={paginate} />}></Route>
+        <Route path='/profile/:id' element={<AdDetails data={data} />}></Route>
+      </Routes>
+      </Router> */}
     </div>
   );
 }

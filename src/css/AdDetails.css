@@ -76,3 +76,7 @@
     height: 200px;
     margin: 2rem auto 4rem;
 } */
+
+.p-pointer {
+    cursor: pointer;
+}

@@ -3,6 +3,7 @@ import AdNav from "../components/AdNav";
 import InsuredLists from "../components/InsuredLists";
 import Pagination from "../components/Pagination";
 import '../css/AdClaim.css'
+import { FcCheckmark } from "react-icons/fc";
 
 const AdPayments = ({ data, totalPost, postPerPage, paginate }) => {
     return ( 
@@ -30,7 +31,7 @@ const AdPayments = ({ data, totalPost, postPerPage, paginate }) => {
             {data && data.map(dat => {
                 const daaat = new Date(dat.timeStamp.toDate()).toDateString();
                 return (
-                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three={dat.payment === undefined ? 'Not Paid' : dat.payment} key={dat.id} to={`/profile/${dat.id}`} />
+                    <InsuredLists one={dat.id} two={`${dat.firstName} ${dat.lastName}`} three={dat.payment === undefined ? 'Not Paid' : <FcCheckmark className="fs-2" />} key={dat.id} to={`/profile/${dat.id}`} />
                 )
             })}
         </tbody>
